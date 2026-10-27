@@ -1,0 +1,19 @@
+adições pro codigo do my-sql
+
+SELECT 
+    c_casa.Nome AS TimeCasa, 
+    p.GolsCasa, 
+    p.GolsFora, 
+    c_fora.Nome AS TimeVisitante,
+    e.Nome AS Estadio
+FROM Partida p
+JOIN Clube c_casa ON c_casa.IdClube = p.IdClubeCasa
+JOIN Clube c_fora ON c_fora.IdClube = p.IdClubeVisitante
+JOIN Estadio e ON e.IdEstadio = c_casa.IdEstadio;
+
+(consultar partida com estádio)
+
+SELECT 
+Clube.Nome, Estadio.Nome
+FROM Clube
+JOIN Estadio ON Estadio.IdEstadio = Clube.IdEstadio;
