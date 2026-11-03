@@ -132,3 +132,16 @@ SELECT
 FROM Partida p
 JOIN Clube c_casa ON c_casa.IdClube = p.IdClubeCasa
 JOIN Clube c_fora ON c_fora.IdClube = p.IdClubeVisitante;
+
+SELECT
+    p.DataEHora AS DataPartida,
+    c_casa.Nome AS TimeCasa, 
+    p.GolsCasa, 
+    p.GolsFora, 
+    c_fora.Nome AS TimeFora,
+    e.Nome AS Estadio,
+    p.NomeArbitro AS Arbitro
+FROM Partida p
+JOIN Clube c_casa ON c_casa.IdClube = p.IdClubeCasa
+JOIN Clube c_fora ON c_fora.IdClube = p.IdClubeVisitante
+JOIN Estadio e ON e.IdEstadio = c_casa.IdEstadio;
